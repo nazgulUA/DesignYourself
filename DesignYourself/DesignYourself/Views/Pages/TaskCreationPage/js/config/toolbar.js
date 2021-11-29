@@ -24,8 +24,7 @@ App.config = App.config || {};
             'clear': { index: 2 },
             'layout': { index: 3 },
             'zoom': { index: 4 },
-            'grid': { index: 5 },
-            'save':{index: 6,align:'right'}
+            'grid': { index: 5 }
         },
         tools: [
             {
@@ -47,21 +46,6 @@ App.config = App.config || {};
                 attrs: {
                     button: {
                         'data-tooltip': 'Redo',
-                        'data-tooltip-position': 'top',
-                        'data-tooltip-position-selector': '.toolbar-container'
-                    }
-                }
-            },
-            {
-                type: 'button',
-                name: 'json',
-                group: 'save',
-                text: 'Save And Send',
-                attrs: {
-                    button: {
-                        id: 'btn-json',
-
-                        'data-tooltip': 'Save your answer and send for check ',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -166,10 +150,6 @@ App.config = App.config || {};
                 max: 50,
                 step: 1,
                 value: 10
-            },
-            {
-                type: 'separator',
-                group: 'grid'
             }
         ]
     };

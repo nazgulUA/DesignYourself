@@ -113,13 +113,6 @@ App.config = App.config || {};
             { value: 'M 0 -5 -10 0 0 5 z', content: 'Medium' },
             { value: 'M 0 -10 -15 0 0 10 z', content: 'Large' },
         ],
-        relationTypes:[
-            {value: 'uml.Aggregation', content: "Aggregation"},
-            {value: 'uml.Association', content: "Association"},
-            {value: 'uml.Composition', content: "Composition"},
-            {value: 'uml.Generalization',content: "Generalization"},
-            {value: 'uml.Implementation',content: "Implementation"},
-        ],
 
         strokeWidth: [
             { value: 1, content: '<div style="background:#fff;width:2px;height:30px;margin:0 14px;border-radius: 2px;"/>' },
@@ -3790,69 +3783,6 @@ App.config = App.config || {};
                     index: 1
                 }
             }
-        },
-        'uml.Aggregation':{
-            inputs:{
-                type:{
-                    type: 'select-box',
-                    options: options.relationTypes,
-                    group: 'Relationship',
-                    label: 'Relationship Type',
-                    index: 1
-                }
-            }
-        },
-        'uml.Association':{
-            inputs:{
-                type:{
-                    type: 'select-box',
-                    options: options.relationTypes,
-                    group: 'Relationship',
-                    label: 'Relationship Type',
-                    index: 1
-                }
-
-            }
-
-        },
-        'uml.Composition':{
-            inputs:{
-                type:{
-                    type: 'select-box',
-                    options: options.relationTypes,
-                    group: 'Relationship',
-                    label: 'Relationship Type',
-                    index: 1
-                }
-
-            }
-
-        },
-        'uml.Generalization':{
-            inputs:{
-                type:{
-                    type: 'select-box',
-                    options: options.relationTypes,
-                    group: 'Relationship',
-                    label: 'Relationship Type',
-                    index: 1
-                }
-
-            }
-
-        },
-        'uml.Implementation':{
-            inputs:{
-                type:{
-                    type: 'select-box',
-                    options: options.relationTypes,
-                    group: 'Relationship',
-                    label: 'Relationship Type',
-                    index: 1
-                }
-
-            }
-
         }
     };
 

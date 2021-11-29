@@ -70,8 +70,9 @@ var App = window.App || {};
                 gridSize: 10,
                 drawGrid: true,
                 model: graph,
-                defaultLink: new joint.shapes.uml.Association,
-                interactive: { linkMove: true },
+                defaultLink: new joint.shapes.app.Link,
+                defaultConnectionPoint: joint.shapes.app.Link.connectionPoint,
+                interactive: { linkMove: false },
                 async: true,
                 sorting: joint.dia.Paper.sorting.APPROX
             });
@@ -90,26 +91,6 @@ var App = window.App || {};
 
             this.$('.paper-container').append(paperScroller.el);
             paperScroller.render().center();
-            graph.on('change:type',function (cell,type){
-                cell.removeAttr(['.marker-target','.connection']);
-                switch (type){
-                    case "uml.Aggregation": cell.attr({ '.marker-target': { d: 'M 40 10 L 20 20 L 0 10 L 20 0 z', fill: 'white' },'.connection': { 'stroke-dasharray': '0' }});
-                    break;
-                    case "uml.Association":cell.attr({'.marker-target':{d:'M 0 0 0 0',fill:'white'},'.connection': { 'stroke-dasharray': '0' }});
-                    break;
-                    case "uml.Composition":cell.attr({ '.marker-target': { d: 'M 40 10 L 20 20 L 0 10 L 20 0 z', fill: 'black' },'.connection': { 'stroke-dasharray': '0' }});
-                    break;
-                    case "uml.Generalization": cell.attr({ '.marker-target': { d: 'M 20 0 L 0 10 L 20 20 z', fill: 'white' },'.connection': { 'stroke-dasharray': '0' }});
-                    break;
-                    case "uml.Implementation":cell.attr({
-                        '.marker-target': { d: 'M 20 0 L 0 10 L 20 20 z', fill: 'white' },
-                        '.connection': { 'stroke-dasharray': '3,3' }
-                    });
-                    break;
-                }
-
-
-            });
         },
 
         // Create and populate stencil.
@@ -283,22 +264,12 @@ var App = window.App || {};
                 });
             }
         },
-        isUMLRelationship: function(cellView){
-            var cell =cellView.model;
-            switch (cell.name){
-                case "uml.Aggregation":return 1;
-                case "uml.Association":return 1;
-                case "uml.Composition":return 1;
-                case "uml.Generalization": return 1;
-                case " uml.Implementation":return 1;
-            }
-            return 0;
-        },
+
         selectPrimaryCell: function(cellView) {
             var cell = cellView.model
             if (cell.isElement()) {
                 this.selectPrimaryElement(cellView);
-            } else if(cell.isLink()){
+            } else {
                 this.selectPrimaryLink(cellView);
             }
             this.createInspector(cell);
@@ -441,7 +412,6 @@ var App = window.App || {};
             });
 
             toolbar.on({
-                'json:pointerclick':this.SaveResult.bind(this),
                 'svg:pointerclick': this.openAsSVG.bind(this),
                 'png:pointerclick': this.openAsPNG.bind(this),
                 'to-front:pointerclick': this.applyOnSelection.bind(this, 'toFront'),
@@ -487,16 +457,7 @@ var App = window.App || {};
 
         // backwards compatibility for older shapes
         exportStylesheet: '.scalable * { vector-effect: non-scaling-stroke }',
-        SaveResult: function(){
-            var paper=this.paper;
-            var json=this.graph.toJSON();
-            var bb = new Blob([JSON.stringify(json) ], { type : 'application/json' });
-            var a = document.createElement('a');
-            a.download = 'download.json';
-            a.href = window.URL.createObjectURL(bb);
-            a.click();
-            console.log(json);
-        },
+
         openAsSVG: function() {
 
             var paper = this.paper;
@@ -554,7 +515,3 @@ var App = window.App || {};
     });
 
 })(_, joint);
-function onStartSolving(id){
-$(id).collapse('show');
-
-}

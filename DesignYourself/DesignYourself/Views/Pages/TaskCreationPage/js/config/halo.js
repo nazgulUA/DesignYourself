@@ -35,6 +35,32 @@ App.config = App.config || {};
                 }
             },
             {
+                name: 'fork',
+                position: 'ne',
+                events: { pointerdown: 'startForking', pointermove: 'doFork', pointerup: 'stopForking' },
+                attrs: {
+                    '.handle': {
+                        'data-tooltip-class-name': 'small',
+                        'data-tooltip': 'Click and drag to clone and connect the object in one go',
+                        'data-tooltip-position': 'left',
+                        'data-tooltip-padding': 15
+                    }
+                }
+            },
+            {
+                name: 'clone',
+                position: 'se',
+                events: { pointerdown: 'startCloning', pointermove: 'doClone', pointerup: 'stopCloning' },
+                attrs: {
+                    '.handle': {
+                        'data-tooltip-class-name': 'small',
+                        'data-tooltip': 'Click and drag to clone the object',
+                        'data-tooltip-position': 'left',
+                        'data-tooltip-padding': 15
+                    }
+                }
+            },
+            {
                 name: 'unlink',
                 position: 'w',
                 events: { pointerdown: 'unlinkElement' },
@@ -56,6 +82,19 @@ App.config = App.config || {};
                         'data-tooltip-class-name': 'small',
                         'data-tooltip': 'Click and drag to connect the object',
                         'data-tooltip-position': 'left',
+                        'data-tooltip-padding': 15
+                    }
+                }
+            },
+            {
+                name: 'rotate',
+                position: 'sw',
+                events: { pointerdown: 'startRotating', pointermove: 'doRotate', pointerup: 'stopBatch' },
+                attrs: {
+                    '.handle': {
+                        'data-tooltip-class-name': 'small',
+                        'data-tooltip': 'Click and drag to rotate the object',
+                        'data-tooltip-position': 'right',
                         'data-tooltip-padding': 15
                     }
                 }
