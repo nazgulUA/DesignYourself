@@ -113,6 +113,13 @@ App.config = App.config || {};
             { value: 'M 0 -5 -10 0 0 5 z', content: 'Medium' },
             { value: 'M 0 -10 -15 0 0 10 z', content: 'Large' },
         ],
+        relationTypes:[
+            {value: 'uml.Aggregation', content: "Aggregation"},
+            {value: 'uml.Association', content: "Association"},
+            {value: 'uml.Composition', content: "Composition"},
+            {value: 'uml.Generalization',content: "Generalization"},
+            {value: 'uml.Implementation',content: "Implementation"},
+        ],
 
         strokeWidth: [
             { value: 1, content: '<div style="background:#fff;width:2px;height:30px;margin:0 14px;border-radius: 2px;"/>' },
@@ -3249,56 +3256,6 @@ App.config = App.config || {};
         },
         'uml.Class': {
             inputs: {
-                attrs: {
-                    '.uml-class-name-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'name',
-                            index: 4
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'name',
-                            index: 5
-                        }
-                    },
-                    '.uml-class-attrs-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'attributes',
-                            index: 4
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'attributes',
-                            index: 5
-                        }
-                    },
-                    '.uml-class-methods-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'methods',
-                            index: 4
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'methods',
-                            index: 5
-                        }
-                    }
-                },
                 name: {
                     type: 'text',
                     group: 'name',
@@ -3341,56 +3298,6 @@ App.config = App.config || {};
         },
         'uml.Interface': {
             inputs: {
-                attrs: {
-                    '.uml-class-name-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'name',
-                            index: 1
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'name',
-                            index: 2
-                        }
-                    },
-                    '.uml-class-attrs-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'attributes',
-                            index: 1
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'attributes',
-                            index: 2
-                        }
-                    },
-                    '.uml-class-methods-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'methods',
-                            index: 1
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'methods',
-                            index: 2
-                        }
-                    }
-                },
                 name: {
                     type: 'text',
                     group: 'name',
@@ -3433,56 +3340,6 @@ App.config = App.config || {};
         },
         'uml.Abstract': {
             inputs: {
-                attrs: {
-                    '.uml-class-name-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'name',
-                            index: 1
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'name',
-                            index: 2
-                        }
-                    },
-                    '.uml-class-attrs-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'attributes',
-                            index: 1
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'attributes',
-                            index: 2
-                        }
-                    },
-                    '.uml-class-methods-rect': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'methods',
-                            index: 1
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'methods',
-                            index: 2
-                        }
-                    }
-                },
                 name: {
                     type: 'text',
                     group: 'name',
@@ -3538,78 +3395,6 @@ App.config = App.config || {};
                         type: 'text'
                     }
                 },
-                attrs: {
-                    '.uml-state-name': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'text',
-                            when: { ne: { 'name': '' }},
-                            index: 5
-                        }
-                    },
-                    '.uml-state-body': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'presentation',
-                            index: 1
-                        },
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Outline',
-                            group: 'presentation',
-                            index: 2
-                        },
-                        'stroke-width': {
-                            type: 'range',
-                            min: 0,
-                            max: 30,
-                            step: 1,
-                            defaultValue: 1,
-                            unit: 'px',
-                            label: 'Outline thickness',
-                            group: 'presentation',
-                            when: { ne: { 'attrs/.uml-state-body/stroke': 'transparent' }},
-                            index: 4
-                        },
-                        'stroke-dasharray': {
-                            type: 'select-box',
-                            options: options.strokeStyle,
-                            label: 'Outline style',
-                            group: 'presentation',
-                            when: {
-                                and: [
-                                    { ne: { 'attrs/.uml-state-body/stroke': 'transparent' }},
-                                    { ne: { 'attrs/.uml-state-body/stroke-width': 0 }}
-                                ]
-                            },
-                            index: 5
-                        }
-                    },
-                    '.uml-state-separator': {
-                        stroke: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Horizontal rule outline',
-                            group: 'presentation',
-                            index: 3
-                        }
-                    },
-                    '.uml-state-events': {
-                        fill: {
-                            type: 'color-palette',
-                            options: options.colorPalette,
-                            label: 'Fill',
-                            group: 'events',
-                            when: { ne: { 'events': 0 }},
-                            index: 5
-                        }
-                    }
-                }
             },
             groups: {
                 presentation: {
@@ -3783,6 +3568,69 @@ App.config = App.config || {};
                     index: 1
                 }
             }
+        },
+        'uml.Aggregation':{
+            inputs:{
+                type:{
+                    type: 'select-box',
+                    options: options.relationTypes,
+                    group: 'Relationship',
+                    label: 'Relationship Type',
+                    index: 1
+                }
+            }
+        },
+        'uml.Association':{
+            inputs:{
+                type:{
+                    type: 'select-box',
+                    options: options.relationTypes,
+                    group: 'Relationship',
+                    label: 'Relationship Type',
+                    index: 1
+                }
+
+            }
+
+        },
+        'uml.Composition':{
+            inputs:{
+                type:{
+                    type: 'select-box',
+                    options: options.relationTypes,
+                    group: 'Relationship',
+                    label: 'Relationship Type',
+                    index: 1
+                }
+
+            }
+
+        },
+        'uml.Generalization':{
+            inputs:{
+                type:{
+                    type: 'select-box',
+                    options: options.relationTypes,
+                    group: 'Relationship',
+                    label: 'Relationship Type',
+                    index: 1
+                }
+
+            }
+
+        },
+        'uml.Implementation':{
+            inputs:{
+                type:{
+                    type: 'select-box',
+                    options: options.relationTypes,
+                    group: 'Relationship',
+                    label: 'Relationship Type',
+                    index: 1
+                }
+
+            }
+
         }
     };
 

@@ -24,7 +24,8 @@ App.config = App.config || {};
             'clear': { index: 2 },
             'layout': { index: 3 },
             'zoom': { index: 4 },
-            'grid': { index: 5 }
+            'grid': { index: 5 },
+            'save':{index: 6,align:'right'}
         },
         tools: [
             {
@@ -46,6 +47,48 @@ App.config = App.config || {};
                 attrs: {
                     button: {
                         'data-tooltip': 'Redo',
+                        'data-tooltip-position': 'top',
+                        'data-tooltip-position-selector': '.toolbar-container'
+                    }
+                }
+            },{
+                type: 'button',
+                name: 'description',
+                group:'save',
+                text: 'Change Description',
+                attrs: {
+                    button: {
+                        id: "btn-description",
+                        'data-tooltip': 'view description',
+                        'data-tooltip-position': 'top',
+                        'data-tooltip-position-selector': '.toolbar-container'
+                    }
+                }
+            },
+            {
+                type: 'button',
+                name: 'exit',
+                group: 'save',
+                text: 'Exit without send',
+                attrs: {
+                    button: {
+                        id: 'btn-exit',
+                        'data-tooltip': 'Exit without sending answer ',
+                        'data-tooltip-position': 'top',
+                        'data-tooltip-position-selector': '.toolbar-container'
+                    }
+                }
+            },
+            {
+                type: 'button',
+                name: 'json',
+                group: 'save',
+                text: 'Save And Send',
+                attrs: {
+                    button: {
+                        id: 'btn-json',
+
+                        'data-tooltip': 'Save your answer and send for check ',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -150,6 +193,10 @@ App.config = App.config || {};
                 max: 50,
                 step: 1,
                 value: 10
+            },
+            {
+                type: 'separator',
+                group: 'grid'
             }
         ]
     };

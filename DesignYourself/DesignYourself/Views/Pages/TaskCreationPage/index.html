@@ -26,28 +26,30 @@
     <h2>Design Yourself</h2>
     <div class="col-md-3 text-end">
         <button type="button" class="btn btn-outline-primary me-2">User profile</button>
-        <button type="button" class="btn btn-primary">Logout</button>
+        <button type="button"  class="btn btn-primary">Logout</button>
     </div>
 </header>
     <div class="modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true"   id="TaskDescription">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">Task: Class UML</h5>
+            <div class="modal-header mb-0 pb-0">
+                <h5 class="modal-title" id="ModalLabel">Create Task</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <label for="TaskTitle" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="TaskTitle" placeholder="Task Title" value="" > </input>
+                <label for="DescriptionInput" class="form-label">Description:</label>
+                <textarea class="form-control" id="DescriptionInput" rows="4" placeholder="Task Description" value=""> </textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Start solving</button>
+                <button type="button" name  class="btn btn-secondary" data-dismiss="modal" >Exit</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" >Create Task</button>
             </div>
         </div>
     </div>
     </div>
-
-    <div id="app">
+    <div id="app" >
         <div class="app-header">
               <div class="app-title">
                   <h1>Design Yourself</h1>
@@ -76,6 +78,9 @@
     $(document).ready(function(){
         $("#TaskDescription").modal('show');
     });
+
+
+
 </script>
     <!--[if IE 9]>
         <script>

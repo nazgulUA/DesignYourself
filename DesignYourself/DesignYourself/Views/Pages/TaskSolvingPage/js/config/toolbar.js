@@ -54,19 +54,47 @@ App.config = App.config || {};
             },
             {
                 type: 'button',
+                name: 'description',
+                group:'save',
+                text: 'Review Description',
+                attrs: {
+                    button: {
+                        id: "btn-description",
+                        'data-tooltip': 'view description',
+                        'data-tooltip-position': 'top',
+                        'data-tooltip-position-selector': '.toolbar-container'
+                    }
+                }
+            },
+            {
+                type: 'button',
+                name: 'exit',
+                group: 'save',
+                text: 'Exit without send',
+                attrs: {
+                    button: {
+                        id: 'btn-exit',
+                        'data-tooltip': 'Exit without sending answer ',
+                        'data-tooltip-position': 'top',
+                        'data-tooltip-position-selector': '.toolbar-container'
+                    }
+                }
+            },
+            {
+                type: 'button',
                 name: 'json',
                 group: 'save',
                 text: 'Save And Send',
                 attrs: {
                     button: {
                         id: 'btn-json',
-
                         'data-tooltip': 'Save your answer and send for check ',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
                 }
             },
+
             {
                 type: 'button',
                 name: 'clear',

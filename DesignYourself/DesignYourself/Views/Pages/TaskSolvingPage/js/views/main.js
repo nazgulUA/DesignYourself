@@ -442,6 +442,8 @@ var App = window.App || {};
 
             toolbar.on({
                 'json:pointerclick':this.SaveResult.bind(this),
+                'exit:pointerclick':this.Exit.bind(this),
+                'description:pointerclick':this.ShowDescription.bind(this),
                 'svg:pointerclick': this.openAsSVG.bind(this),
                 'png:pointerclick': this.openAsPNG.bind(this),
                 'to-front:pointerclick': this.applyOnSelection.bind(this, 'toFront'),
@@ -487,16 +489,32 @@ var App = window.App || {};
 
         // backwards compatibility for older shapes
         exportStylesheet: '.scalable * { vector-effect: non-scaling-stroke }',
+        ShowDescription:function () {
+            $('#exitButton').css('display','none');
+            $('#solvingButton').html('Continue Solving');
+            $("#TaskDescription").modal('show');
+        },
         SaveResult: function(){
+
             var paper=this.paper;
             var json=this.graph.toJSON();
             var bb = new Blob([JSON.stringify(json) ], { type : 'application/json' });
+
             var a = document.createElement('a');
             a.download = 'download.json';
             a.href = window.URL.createObjectURL(bb);
-            a.click();
-            console.log(json);
+            if(confirm("Are you sure want save and send answer")) {
+                a.click();
+                console.log(json);
+            }
+
         },
+        Exit:function (){
+          if(confirm("Are you sure want exit")){
+              window.location.href="https://www.w3schools.com";
+          }
+        },
+
         openAsSVG: function() {
 
             var paper = this.paper;
