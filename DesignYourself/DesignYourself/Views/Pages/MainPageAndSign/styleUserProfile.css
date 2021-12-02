@@ -1,0 +1,92 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: solid rgba(0, 0, 0, .15);
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+.rowUserProfile {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x)/ -2);
+    margin-left: calc(var(--bs-gutter-x)/ -2);
+    justify-content: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.center1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success input {
+  border-color: #2ecc71;
+}
+
+.error input {
+  border-color: #e74c3c;
+}
+
+small {
+  color: #e74c3c;
+  visibility: hidden;
+}
+
+.error small {
+  visibility: visible;
+}

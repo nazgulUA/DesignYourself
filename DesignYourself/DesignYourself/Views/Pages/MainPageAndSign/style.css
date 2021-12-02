@@ -72,3 +72,41 @@ small {
   padding-left: 30%;
   width: 70%;
 }
+
+.row2 {
+  padding-left: 75%;
+  width: 25%;
+  padding-bottom: 5%;
+}
+
+.header{
+  padding-bottom: 1%;
+}
+
+.navbar1 {
+  overflow: hidden;
+  background-color: #343a40;
+  text-align: center;
+  padding-bottom: 1%;
+}
+
+.navbar1 a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar1 a.right {
+}
+
+.navbar1 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar1 a.active {
+  background-color: #666;
+  color: white;
+}
+
+

@@ -2,6 +2,8 @@ const form1 = document.getElementById('signupData');
 const email1 = document.getElementById('email1');
 const password1 = document.getElementById('password1');
 const password2 = document.getElementById('password2');
+const fName = document.getElementById('fName');
+const lName = document.getElementById('lName');
 
 form1.addEventListener('submit', event => {
   event.preventDefault();
@@ -13,7 +15,21 @@ function checkInputs1() {
   const emailValue1 = email1.value.trim();
   const passwordValue1 = password1.value.trim();
   const passwordValue2 = password2.value.trim();
-  
+  const fNameValue3 = fName.value.trim();
+  const lNameValue4 = lName.value.trim();
+
+  if(fNameValue3 === '') {
+    setErrorFor1(fName, 'First Name cannot be blank');
+  } else {
+    setSuccessFor1(fName);
+  }
+
+  if(lNameValue4 === '') {
+    setErrorFor1(lName, 'Last Name cannot be blank');
+  } else {
+    setSuccessFor1(lName);
+  }
+
   if(emailValue1 === '') {
     setErrorFor1(email1, 'Email cannot be blank');
   } else if (!isEmail1(emailValue1)) {
