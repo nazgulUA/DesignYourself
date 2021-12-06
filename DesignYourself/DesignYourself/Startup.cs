@@ -33,6 +33,7 @@ namespace DesignYourself
             object p = services.AddDbContext<DesignYourselfContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Default connection"), x => x.UseNetTopologySuite()));
             services.RegisterMapperProfiles();
+            services.AddSingleton(typeof(IAuthenticationService), typeof(AuthenticationServiceSingleton));
             services.AddScoped(typeof(IAuthenticationService), typeof(AuthenticationService));
             services.AddScoped(typeof(ITaskEvaluationService), typeof(TaskEvaluationService));
             services.AddScoped(typeof(ITaskManagmentService), typeof(TaskManagmentService));
