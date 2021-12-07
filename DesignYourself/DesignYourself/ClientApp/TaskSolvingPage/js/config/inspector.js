@@ -3254,7 +3254,7 @@ App.config = App.config || {};
                 }
             }
         },
-        'uml.Class': {
+     /*   'uml.Class': {
             inputs: {
                 attrs: {
                     '.uml-class-name-rect': {
@@ -3632,7 +3632,7 @@ App.config = App.config || {};
                     index: 3
                 }
             }
-        },
+        },*/
         'org.Member': {
             inputs: {
                 attrs: {

@@ -13,6 +13,7 @@ namespace DesignYourself.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Produces("application/json")]
     public class UsersController : ControllerBase
     {
         private readonly DesignYourselfContext _context;

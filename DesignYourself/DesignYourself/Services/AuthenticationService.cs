@@ -48,7 +48,7 @@ namespace DesignYourself.Services
                 if (new EmailAddressAttribute().IsValid(email))
                 {
                     User user = dbContext.Users.Add(new User() { Email = email, Password = password, UserTypeId = 2 }).Entity;
-                    dbContext.SaveChangesAsync();
+                    dbContext.SaveChanges();
                     User userOut = dbContext.Users.Where(u => u.Email == user.Email).FirstOrDefault();
                     return mapper.Map<User, AuthViewModel>(userOut);
                 }

@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
-
 </head>
 <body>
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
@@ -37,7 +36,7 @@
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p id="taskDescriptionText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="exitButton" data-dismiss="modal" >Exit</button>
@@ -69,15 +68,8 @@
     <script src="node_modules/backbone/backbone.js"></script>
     <script src="node_modules/graphlib/dist/graphlib.core.js"></script>
     <script src="node_modules/dagre/dist/dagre.core.js"></script>
-
     <script src="build/package/rappid.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $("#TaskDescription").modal('show');
-    });
-
-
-
 </script>
     <!--[if IE 9]>
         <script>
@@ -99,12 +91,42 @@
     <script src="js/views/navigator.js"></script>
 
     <script>
-        joint.setTheme('modern');
-        app = new App.MainView({ el: '#app' });
-        themePicker = new App.ThemePicker({ mainView: app });
-        themePicker.render().$el.appendTo(document.body);
-        window.addEventListener('load', function() {
-            app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+
+        window.addEventListener('load', async function () {
+
+            const parseURL = new URL(window.location.href);
+            console.log(parseURL.searchParams.get("TaskId"))
+            if (parseURL.searchParams.get("TaskId")) {
+                try {
+                    const rawResponse = await fetch('https://localhost:44326/api/Users/SignIn', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'text/plain',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({"email": "string132@gmail.com",
+                        "password": "string"})
+                });
+                    const content = await rawResponse.json();
+                    console.log((content));
+
+                    const url = 'https://localhost:44326/api/Tasks/GetTask/2';
+                    const respone = await fetch(url, {method: 'GET'});
+                    const json = await respone.json();
+                    console.log(json['taskData']);
+                    $("#ModalLabel").text(json['name']);
+                    $("#taskDescriptionText").text(json['description']);
+                    App.config.stencil.shapes.uml=JSON.parse(json['taskData']);
+                    $("#TaskDescription").modal('show');
+                    joint.setTheme('modern');
+                    app = new App.MainView({ el: '#app' });
+                    themePicker = new App.ThemePicker({ mainView: app });
+                    themePicker.render().$el.appendTo(document.body);
+                    app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+                } catch (error) {
+                    console.error((error));
+                }
+            }
         });
     </script>
 

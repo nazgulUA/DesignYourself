@@ -12,6 +12,7 @@ using AutoMapper;
 namespace DesignYourself.Controllers
 {
     [Route("api/[controller]/[action]")]
+    [Produces("application/json")]
     [ApiController]
     public class TasksController : ControllerBase
     {

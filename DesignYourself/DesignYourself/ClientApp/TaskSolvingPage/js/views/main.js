@@ -61,7 +61,6 @@ var App = window.App || {};
         initializePaper: function() {
 
             var graph = this.graph = new joint.dia.Graph;
-
             this.commandManager = new joint.dia.CommandManager({ graph: graph });
 
             var paper = this.paper = new joint.dia.Paper({

@@ -14,7 +14,7 @@ namespace DesignYourself.ViewModels
         public int Mark { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime SolutionDate { get; set; }
+        public DateTime SolvationDate { get; set; }
         public string TaskName { get; set; }
     }
 }
