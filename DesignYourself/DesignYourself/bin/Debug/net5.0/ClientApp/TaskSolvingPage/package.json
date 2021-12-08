@@ -1,7 +1,7 @@
 {
-  "name": "rappid-kitchen-sink",
+  "name": "DesignYourself",
   "version": "2.3.1",
-  "description": "The Kitchen Sink Application for Rappid",
+  "description": "design trainer program",
   "main": "index.html",
   "scripts": {},
   "author": "client IO",

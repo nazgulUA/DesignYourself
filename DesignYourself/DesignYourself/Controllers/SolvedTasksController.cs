@@ -60,9 +60,11 @@ namespace DesignYourself.Controllers
             {
                 var createdTaskResult = service.CreateTaskEvaluation(solvedTask);
                 return Ok(createdTaskResult);
+
+
             }catch(Exception exception)
             {
-                return BadRequest(exception);
+                return BadRequest(exception.Message);
             }
         }
 

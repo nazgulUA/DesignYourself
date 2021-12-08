@@ -37,14 +37,16 @@
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <form class=" needs-validation" novalidate>
                 <label for="TaskTitle" class="form-label">Title:</label>
-                <input type="text" class="form-control" id="TaskTitle" placeholder="Task Title" value="" > </input>
+                <input type="text" class="form-control" id="TaskTitle" placeholder="Task Title" value="" required > </input>
                 <label for="DescriptionInput" class="form-label">Description:</label>
-                <textarea class="form-control" id="DescriptionInput" rows="4" placeholder="Task Description" value=""> </textarea>
+                <textarea class="form-control" id="DescriptionInput" rows="4" placeholder="Task Description" value="" required> </textarea>
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" name  class="btn btn-secondary" data-dismiss="modal" >Exit</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" >Create Task</button>
+                <button type="button" onclick="GoToMainPage()" id="exitButton" class="btn btn-secondary" data-dismiss="modal" >Exit</button>
+                <button type="button" class="btn btn-primary" id="taskDescriptionCreation" data-dismiss="modal" >Start Task Creation</button>
             </div>
         </div>
     </div>
@@ -74,14 +76,6 @@
     <script src="node_modules/dagre/dist/dagre.core.js"></script>
 
     <script src="build/package/rappid.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#TaskDescription").modal('show');
-    });
-
-
-
-</script>
     <!--[if IE 9]>
         <script>
           // `-ms-user-select: none` doesn't work in IE9
@@ -107,8 +101,17 @@
         themePicker = new App.ThemePicker({ mainView: app });
         themePicker.render().$el.appendTo(document.body);
         window.addEventListener('load', function() {
-            app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+            //app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+            $("#TaskTitle").val('');
+            $("#taskDescriptionText").val('');
+            $("#TaskDescription").modal('show');
         });
+        function GoToMainPage(){
+            window.location.replace('../MainPage.php')
+        }
+        function GoToUserPage(){
+            window.location.replace('../UserProfile.php');
+        }
     </script>
 
     <!-- Local file warning: -->

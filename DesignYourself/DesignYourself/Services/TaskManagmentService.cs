@@ -83,11 +83,14 @@ namespace DesignYourself.Services
 
         public bool Delete(int TaskId)
         {
-            if ((dbContext.Tasks.Any(s => s.TaskId == TaskId))&&(dbContext.SolvedTasks.Any(s => s.Task.TaskId == TaskId)))
-            {
-                dbContext.SolvedTasks.RemoveRange(dbContext.SolvedTasks.Where(s => s.Task.TaskId == TaskId));
+            if (dbContext.Tasks.Any(s => s.TaskId == TaskId)) { 
+                if(dbContext.SolvedTasks.Any(s => s.Task.TaskId == TaskId))
+                {
+                    dbContext.SolvedTasks.RemoveRange(dbContext.SolvedTasks.Where(s => s.Task.TaskId == TaskId));
+                    dbContext.SaveChanges();
+                }
                 dbContext.Tasks.Remove(dbContext.Tasks.Find(TaskId));
-                 dbContext.SaveChanges();
+                dbContext.SaveChanges();
                 return true;
             }
             

@@ -159,3 +159,7 @@ D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\
 D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\NetTopologySuite.IO.SqlServerBytes.dll
 D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\obj\Debug\net5.0\EFCoreSqlServerNetTopologySuite.cs
 D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\web.config
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\TaskUpdatePage\build\package-visio\package-lock.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\TaskUpdatePage\build\package-visio\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\TaskUpdatePage\build\package\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\TaskUpdatePage\package.json

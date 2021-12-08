@@ -491,30 +491,54 @@ var App = window.App || {};
         exportStylesheet: '.scalable * { vector-effect: non-scaling-stroke }',
         ShowDescription:function () {
             $('#exitButton').css('display','none');
-            $('#solvingButton').html('Continue Solving');
+            $('#taskDescriptionCreation').html('Continue task creation');
             $("#TaskDescription").modal('show');
         },
         Exit:function (){
             if(confirm("Are you sure want exit")){
-                window.location.href="https://www.w3schools.com";
+                GoToMainPage();
             }
         },
-        SaveResult: function(){
+        SaveResult: async function(){
+            const url="https://localhost:44326/api/Tasks/PostTask";
             var paper=this.paper;
             var json=this.graph.toJSON();
             var newtitle=$('#TaskTitle').val();
             var Description=$('#DescriptionInput').val();
-            var newtask={
-                title:newtitle,
-                description:Description,
-                TaskData:json
-            };
-            var bb = new Blob([JSON.stringify(newtask) ], { type : 'application/json' });
-            var a = document.createElement('a');
-            a.download = 'download.json';
-            a.href = window.URL.createObjectURL(bb);
-            a.click();
-            console.log(json);
+            if(confirm("Are you sure want save and send task")) {
+            if (newtitle && Description) {
+                console.log('test');
+                window.localStorage.setItem('UserId', '1');
+                var userId = parseInt(window.localStorage.getItem('UserId'));
+                var data={userId:userId,taskTypeId:1,name:newtitle,description: Description,standartData:JSON.stringify(json)}
+                try {
+                    const response=await fetch(url,
+                        {method: 'POST', // или 'PUT'
+                            body: JSON.stringify(data), // данные могут быть 'строкой' или {объектом}!
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                    GoToMainPage();
+                }catch (exception){
+                    console.log(exception.message);
+                    alert('Exception:'+exception.message+'\n'+"Change task data and try again");
+                }
+                var newtask = {
+                    title: newtitle,
+                    description: Description,
+                    TaskData: json
+                };
+                /*var bb = new Blob([JSON.stringify(newtask)], {type: 'application/json'});
+                var a = document.createElement('a');
+                a.download = 'download.json';
+                a.href = window.URL.createObjectURL(bb);
+                a.click();*/
+                console.log(json);
+            } else {
+                alert("Fill all fields before creation task");
+            }
+        }
         },
         openAsSVG: function() {
 

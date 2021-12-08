@@ -337,7 +337,6 @@ var App = window.App || {};
                     new ns.Remove({ offset: -20, distance: 40 })
                 ]
             });
-
             linkView.addTools(toolsView);
         },
 
@@ -404,7 +403,6 @@ var App = window.App || {};
         },
 
         initializeNavigator: function() {
-
             var navigator = this.navigator = new joint.ui.Navigator({
                 width: 240,
                 height: 115,
@@ -493,24 +491,49 @@ var App = window.App || {};
             $('#solvingButton').html('Continue Solving');
             $("#TaskDescription").modal('show');
         },
-        SaveResult: function(){
-
+        SaveResult: async function(){
             var paper=this.paper;
-            var json=this.graph.toJSON();
-            var bb = new Blob([JSON.stringify(json) ], { type : 'application/json' });
-
+            var json=JSON.stringify(this.graph.toJSON());
+            //localStorage.setItem('UserId', '1');
+            var userId=parseInt(localStorage.getItem('UserId'));
+            const parseURL = new URL(window.location.href);
+            console.log(parseURL.searchParams.get("TaskId"));
+            /*var bb = new Blob([JSON.stringify(json) ], { type : 'application/json' });
             var a = document.createElement('a');
             a.download = 'download.json';
-            a.href = window.URL.createObjectURL(bb);
+            a.href = window.URL.createObjectURL(bb);*/
             if(confirm("Are you sure want save and send answer")) {
-                a.click();
-                console.log(json);
+
+                const url="https://localhost:44326/api/SolvedTasks";
+                const data={taskId:parseURL.searchParams.get("TaskId"),userId:userId,standartData:json};
+                try {
+
+                    const response=await fetch(url,
+                        {method: 'POST', // или 'PUT'
+                        body: JSON.stringify(data), // данные могут быть 'строкой' или {объектом}!
+                        headers: {
+                        'Content-Type': 'application/json'
+                    }
+                    });
+                    const jsontest=await  response.json();
+                    const standartData=await jsontest['standartData'];
+                    console.log(jsontest['mark']);
+                    if(jsontest['mark']=='1'){
+                        $('#ModalResultMark').text("Congratulation!!! You solve task correct");
+                        $('#TaskCompleteResult').modal('show');
+                    }else {
+                        $('#ModalResultMark').text("Unfortunately, you did not complete the task correctly ");
+                        $('#TaskCompleteResult').modal('show');
+                    }
+                }catch (exception){
+                    console.log(exception.message);
+                }
             }
 
         },
         Exit:function (){
           if(confirm("Are you sure want exit")){
-              window.location.href="https://www.w3schools.com";
+              GoToMainPage();
           }
         },
 

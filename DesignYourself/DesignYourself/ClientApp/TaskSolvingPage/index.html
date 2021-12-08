@@ -13,8 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.modern.css">
     <!-- Bootstrap -->
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 </head>
 <body>
@@ -36,15 +35,29 @@
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p id="taskDescriptionText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p id="taskDescriptionText"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="exitButton" data-dismiss="modal" >Exit</button>
+                <button type="button" onclick="GoToMainPage()" class="btn btn-secondary" id="exitButton" data-dismiss="modal" >Exit</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal" id="solvingButton">Start solving</button>
             </div>
         </div>
     </div>
     </div>
+        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="CompleteTaskResult"   id="TaskCompleteResult">
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalResultMark"></h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                <div class="modal-footer">
+                        <button type="button" onclick="GoToMainPage()" class="btn btn-secondary" id="BackToMainPage" data-dismiss="modal" >Back to main page</button>
+                        <button type="button" onclick="GoToUserPage()" class="btn btn-primary" data-dismiss="modal" id="GotoStatistic">Go to your statistic</button>
+                    </div>
+                </div>
+            </div>
+            </div>
     <div id="app" >
         <div class="app-header">
               <div class="app-title">
@@ -61,10 +74,9 @@
     </div>
 
     <!-- Rappid/JointJS dependencies: -->
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="node_modules/lodash/lodash.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="node_modules/lodash/lodash.js"></script>
     <script src="node_modules/backbone/backbone.js"></script>
     <script src="node_modules/graphlib/dist/graphlib.core.js"></script>
     <script src="node_modules/dagre/dist/dagre.core.js"></script>
@@ -91,26 +103,13 @@
     <script src="js/views/navigator.js"></script>
 
     <script>
-
         window.addEventListener('load', async function () {
-
             const parseURL = new URL(window.location.href);
             console.log(parseURL.searchParams.get("TaskId"))
             if (parseURL.searchParams.get("TaskId")) {
                 try {
-                    const rawResponse = await fetch('https://localhost:44326/api/Users/SignIn', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'text/plain',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({"email": "string132@gmail.com",
-                        "password": "string"})
-                });
-                    const content = await rawResponse.json();
-                    console.log((content));
 
-                    const url = 'https://localhost:44326/api/Tasks/GetTask/2';
+                    const url = 'https://localhost:44326/api/Tasks/GetTask/'+parseURL.searchParams.get("TaskId");
                     const respone = await fetch(url, {method: 'GET'});
                     const json = await respone.json();
                     console.log(json['taskData']);
@@ -122,12 +121,18 @@
                     app = new App.MainView({ el: '#app' });
                     themePicker = new App.ThemePicker({ mainView: app });
                     themePicker.render().$el.appendTo(document.body);
-                    app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+                    //app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
                 } catch (error) {
                     console.error((error));
                 }
             }
         });
+        function GoToMainPage(){
+            window.location.replace('../MainPage.php')
+        }
+        function GoToUserPage(){
+            window.location.replace('../UserProfile.php');
+        }
     </script>
 
     <!-- Local file warning: -->

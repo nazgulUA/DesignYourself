@@ -46,7 +46,7 @@ namespace DesignYourself.Services
                 TaskStandartDataModelJSON data = TaskResultValidation(task.StandartData);
                 if (IsTaskExist(TaskId) && (data != null))
                 {
-                    Models.Task testTask=dbContext.Tasks.Where(task => task.TaskId == task.TaskId).FirstOrDefault();
+                    Models.Task testTask=dbContext.Tasks.Where(t => t.TaskId == task.TaskId).FirstOrDefault();
                     Models.TaskType type = dbContext.TaskTypes.Where(t => t.TaskTypeId == testTask.TaskTypeId).FirstOrDefault();
                     TaskStandartDataModelJSON standartData = JsonSerializer.Deserialize<TaskStandartDataModelJSON>(testTask.StandartData);
                     TaskTypeElementsJSON elements = JsonSerializer.Deserialize<TaskTypeElementsJSON>(type.Elements);
@@ -105,13 +105,13 @@ namespace DesignYourself.Services
                 }
                 else
                 {
-                    throw new Exception("Task with id " + TaskId + " not exist");
+                    return 0;
 
                 }
             }
             else
             {
-                throw new Exception("Task Solution data is null");
+                return 0;
             }
             return 1;
         }
