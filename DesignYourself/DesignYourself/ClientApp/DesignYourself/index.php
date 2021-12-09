@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="style.css">
   </head>
 <body>
@@ -43,13 +45,12 @@
             placeholder="Enter email">
             <small>Error message</small>
           </div>
-           <div>
+          <div>
             <label>Password:</label>
             <input id="password" type="password" class="form-control" 
             placeholder="Enter password">
             <small>Error message</small>
           </div>
-          <hr>
           <div class="form-group float-right">
             <button type="submit" class="btn btn-primary" id="submitSignInBtn">Confirm</button>
             <button type="button" class="btn btn-outline-primary me-2" data-dismiss="modal">Close</button>

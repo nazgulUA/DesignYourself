@@ -21,7 +21,7 @@
     <a href="MainPage.php">Tasks</a>
     <a id="ManagTask" href="ManagmentTasks.php">Managment Tasks</a>
     <a href="AllUserStatics.php">Statistics of completed tasks</a>
-    </div>
+      </div>
     </h1>
     </div>
     <div class="container">
@@ -54,7 +54,7 @@
     </div>
     </div>
     </div>
-    <div class="row">
+    <div class="row1">
     <table class='table table-striped table-hover'>
               <thead>
                 <tr>

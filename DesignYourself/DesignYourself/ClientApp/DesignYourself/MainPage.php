@@ -20,8 +20,8 @@
     <i class="fas fa-swatchbook"></i>
     <a href="MainPage.php">Tasks</a>
     <a id="ManagTask" href="ManagmentTasks.php">Managment Tasks</a>
-    <a id="AllUserStatics" href="AllUserStatics.php">Statistics of completed tasks</a>
-    </div>
+    <a id="StatisticsTask" href="AllUserStatics.php">Statistics of completed tasks</a>
+      </div>
     </h1>
     </div>
     <!-- Delete Modal -->
@@ -58,7 +58,7 @@
     </div>
   </div>
 </div>
-    <div class="row">
+    <div class="row1">
     <table class='table table-striped table-hover'>
       <thead>
         <tr>

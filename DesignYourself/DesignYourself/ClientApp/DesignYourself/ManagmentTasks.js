@@ -61,15 +61,11 @@ $(window).on('load', function () {
         )
     }
 
-    document.getElementById('submitDelete').onclick = async function (){
-        alert(window.localStorage.getItem('currentTask'));
+    document.getElementById('submitDelete').onclick = function (){
         var url = "https://localhost:44326/api/Tasks/DeleteTask/";
         var xhr = new XMLHttpRequest();
+
         xhr.open("DELETE", url+ window.localStorage.getItem('currentTask'), false);
-     xhr.send(null);
-        xhr.onreadystatechange = function () {
-            alert(this.responseText);
-    
-        };
+        xhr.send(null);
     }
 });

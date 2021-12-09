@@ -14,6 +14,7 @@
     <link rel="stylesheet" 
    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="styleUserProfile.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container header">
@@ -36,7 +37,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
-                <div class="row mt-3">
+                <div class="row1 mt-3">
                     <div class="col-md-12" style="padding-right: 8%"><label class="labels">Email (login)</label>
                       <input id="Email" type="text" class="form-control"  value="" readonly></div>
                 </div>
@@ -58,6 +59,41 @@
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="text-right">User statics</h4>
               </div>
+                  <div class="mom">
+            <div class="child">
+              <button id="sortDay" class="childinner btn btn-primary" onclick = "sortByReverse()">Reverse sort</button>
+            </div>
+            <div class="child">
+              <button id="sortMonth" class="childinner btn btn-primary" onclick = "sortByDay()">Sort by date</button>
+            </div>
+            </div>
+              <!-- Filter Modal -->
+            <div class="modal" id="filterbyDay">
+            <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Filter tasks by date</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form id="loginData">
+                  <div>
+                    <label>Date:</label>
+                    <input id="textDay" type="text" class="form-control" 
+                    placeholder="Enter date">
+                  </div>
+                  <hr>
+                  <div class="form-group float-right">
+                    <button type="button" class="btn btn-primary" id="filteringDay">Confirm</button>
+                    <button type="button" class="btn btn-outline-primary me-2" data-dismiss="modal">Close</button>
+                  </div>  
+                </form>
+              </div>
+            </div>
+            </div>
+            </div>
                 <table class='table table-striped table-hover'>
               <thead>
                 <tr>

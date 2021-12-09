@@ -110,9 +110,3 @@ small {
    margin-left: 5px;
    margin-top: 5px;
 }
-
-.row1 {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-}
