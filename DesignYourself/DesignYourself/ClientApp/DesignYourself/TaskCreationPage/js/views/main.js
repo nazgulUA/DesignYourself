@@ -508,7 +508,7 @@ var App = window.App || {};
             if(confirm("Are you sure want save and send task")) {
             if (newtitle && Description) {
                 console.log('test');
-                window.localStorage.setItem('UserId', '1');
+                //window.localStorage.setItem('UserId', '1');
                 var userId = parseInt(window.localStorage.getItem('UserId'));
                 var data={userId:userId,taskTypeId:1,name:newtitle,description: Description,standartData:JSON.stringify(json)}
                 try {

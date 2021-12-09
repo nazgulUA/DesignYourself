@@ -94,7 +94,7 @@ namespace DesignYourself.Services
                         }
                         var sSourceEntity = sentites.Where(e => e.name == sEntity.name).FirstOrDefault();
                         var sTargetEntity = sentites.Where(e => e.name == tEntity.name).FirstOrDefault();
-                        if (cell.type != "uml.Association") {
+                        if (cell.type == "uml.Association") {
                             if ((srelationship.Any(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)&&(sr.type==cell.type)))|| (srelationship.Any(sr => (sr.source.id == sTargetEntity.id) && (sr.target.id == sSourceEntity.id)&&(sr.type==cell.type))))
                             {
                             }
