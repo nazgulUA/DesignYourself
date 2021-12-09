@@ -495,7 +495,7 @@ var App = window.App || {};
             var paper=this.paper;
             var json=JSON.stringify(this.graph.toJSON());
             //localStorage.setItem('UserId', '1');
-            var userId=parseInt(localStorage.getItem('UserId'));
+            var userId=parseInt(localStorage.getItem('userId'));
             const parseURL = new URL(window.location.href);
             console.log(parseURL.searchParams.get("TaskId"));
             /*var bb = new Blob([JSON.stringify(json) ], { type : 'application/json' });
