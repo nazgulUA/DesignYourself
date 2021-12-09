@@ -88,6 +88,10 @@ namespace DesignYourself.Services
                     {
                         var sEntity = entities.Where(e=>e.id==cell.source.id).FirstOrDefault();
                         var tEntity = entities.Where(e => e.id == cell.target.id).FirstOrDefault();
+                        if ((sEntity == null) || (tEntity == null))
+                        {
+                            return 0;
+                        }
                         var sSourceEntity = sentites.Where(e => e.name == sEntity.name).FirstOrDefault();
                         var sTargetEntity = sentites.Where(e => e.name == tEntity.name).FirstOrDefault();
                         if (cell.type != "uml.Association") {
