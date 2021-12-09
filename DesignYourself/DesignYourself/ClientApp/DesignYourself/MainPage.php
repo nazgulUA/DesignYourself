@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
       <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
 <body>
@@ -18,10 +19,44 @@
     <div class="navbar1">
     <i class="fas fa-swatchbook"></i>
     <a href="MainPage.php">Tasks</a>
-    <a href="ManagmentTasks.php">Managment Tasks</a>
+    <a id="ManagTask" href="ManagmentTasks.php">Managment Tasks</a>
       </div>
     </h1>
     </div>
+    <!-- Delete Modal -->
+    <div class="modal" id="loginModal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Authentication</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form id="loginData">
+           <div>
+            <label>Email:</label>
+            <input id="email" type="text" class="form-control" 
+            placeholder="Enter email">
+            <small>Error message</small>
+          </div>
+           <div>
+            <label>Password:</label>
+            <input id="password" type="password" class="form-control" 
+            placeholder="Enter password">
+            <small>Error message</small>
+          </div>
+          <hr>
+          <div class="form-group float-right">
+            <button type="submit" class="btn btn-primary" id="submitSignInBtn">Confirm</button>
+            <button type="button" class="btn btn-outline-primary me-2" data-dismiss="modal">Close</button>
+          </div>  
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="row">
     <table class='table table-striped table-hover'>
       <thead>
@@ -29,36 +64,12 @@
           <th style='text-align: center; vertical-align: middle;'>Task of constructing UML-diagrams</th>
         </tr>
       </thead>
-        <tbody>
-          <tr>
-            <td style='text-align: center; vertical-align: middle;'>
-              <a style='color: #000000;' href="">Diagram Use case</a>
-            </td>
-          </tr>
-           <tr>
-            <td style='text-align: center; vertical-align: middle;'>
-              <a style='color: #000000;' href="">Activity diagram</a>
-            </td>
-          </tr>
-           <tr>
-            <td style='text-align: center; vertical-align: middle;'>
-              <a style='color: #000000;' href="">Sequence diagram</a>
-            </td>
-          </tr>
-           <tr>
-            <td style='text-align: center; vertical-align: middle;'>
-              <a style='color: #000000;' href="">Deployment diagram</a>
-            </td>
-          </tr>
-           <tr>
-            <td style='text-align: center; vertical-align: middle;'>
-              <a style='color: #000000;' href="">Class diagram</a>
-            </td>
-          </tr>
+        <tbody id="MainPageTable">
         </tbody>
     </table>
     </div>
 <?php include 'footer.php'; ?>
+<script src="MainPage.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -7,13 +7,14 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
 <body>
   <div class="container header">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
       <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <i style="font-size: 2em;" class="fab fa-dyalog"></i>
+        <i style="font-size: 2em;" class="fas fa-drafting-compass"></i>
       </a>
       <h2>Design Yourself</h2>
       <div class="col-md-3 text-end">
@@ -50,7 +51,7 @@
           </div>
           <hr>
           <div class="form-group float-right">
-            <button type="submit" class="btn btn-primary" id="submit">Confirm</button>
+            <button type="submit" class="btn btn-primary" id="submitSignInBtn">Confirm</button>
             <button type="button" class="btn btn-outline-primary me-2" data-dismiss="modal">Close</button>
           </div>  
         </form>
@@ -70,18 +71,6 @@
       <!-- Modal body -->
       <div class="modal-body">
         <form id="signupData">
-          <div>
-            <label>First Name:</label>
-            <input id="fName" type="text" class="form-control" 
-            placeholder="Enter First Name">
-            <small>Error message</small>
-          </div>
-          <div>
-            <label>Last Name:</label>
-            <input id="lName" type="text" class="form-control" 
-            placeholder="Enter Last Name">
-            <small>Error message</small>
-          </div>
            <div>
             <label>Email:</label>
             <input id="email1" type="text" class="form-control" 
@@ -102,7 +91,7 @@
           </div>
           <hr>
           <div class="form-group float-right">
-            <button type="submit" class="btn btn-primary" id="submit1">Confirm</button>
+            <button type="submit" class="btn btn-primary" id="submitSignUpBtn">Confirm</button>
             <button type="button" class="btn btn-outline-primary me-2" data-dismiss="modal">Close</button>
           </div>  
         </form>
@@ -141,6 +130,7 @@
   </div>
 </div>
 <?php include 'footer.php'; ?>
+<script src="index.js"></script>
 <script src="loginValidation.js"></script>
 <script src="SignupValidation.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

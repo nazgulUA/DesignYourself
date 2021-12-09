@@ -14,7 +14,7 @@
   <div class="container header">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
       <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <i style="font-size: 2em;" class="fab fa-dyalog"></i>
+        <i style="font-size: 2em;" class="fas fa-drafting-compass"></i>
       </a>
       <h2>Design Yourself</h2>
       <div class="col-md-3 text-end">
@@ -22,9 +22,20 @@
         <button type="button" class="btn btn-outline-primary me-2">User profile</button>
         </a>
         <a href="index.php">
-        <button href="index.php" type="button" class="btn btn-primary">Logout</button>
+        <button id="logoutButton" onclick="clearLocalStorage ()" href="index.php" type="button" class="btn btn-primary">Logout</button>
         </a>
       </div>
     </header>
   </div>
+  <script type="text/javascript">
+        function clearLocalStorage ()
+        {
+        window.localStorage.setItem('userId', "");
+        window.localStorage.setItem('userTypeId', "");
+        window.localStorage.setItem('email', "");
+        window.localStorage.setItem('password', "");
+
+        console.log("Deleted");
+    }
+  </script>
 </html>

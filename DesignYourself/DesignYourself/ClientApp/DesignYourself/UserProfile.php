@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" 
+   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="styleUserProfile.css">
   </head>
   <body>
     <div class="container header">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
       <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <i style="font-size: 2em;" class="fab fa-dyalog"></i>
+        <i style="font-size: 2em;" class="fas fa-drafting-compass"></i>
       </a>
       <h2>Design Yourself</h2>
       <div class="col-md-3 text-end">
@@ -33,17 +36,20 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">First Name</label>
-                      <input type="text" class="form-control"  value="" readonly></div>
-                </div>
-                  <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Last Name</label>
-                      <input type="text" class="form-control"  value="" readonly></div>
-                </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Email (login)</label>
-                      <input type="text" class="form-control"  value="" readonly></div>
+                    <div class="col-md-12" style="padding-right: 8%"><label class="labels">Email (login)</label>
+                      <input id="Email" type="text" class="form-control"  value="" readonly></div>
+                </div>
+                   <div class="row1 mt-3">
+                    <div class="loqrows">
+                      <label class="labels">Password</label>
+                      <div class="container1">
+                      <input id="Password" type="password" class="form-control"  value="" readonly>
+                      <div class="icon">
+                      <i class="bi bi-eye-slash" id="togglePassword"></i>
+                      </div>
+                      </div>                   
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,18 +66,15 @@
                   <th style='text-align: center; vertical-align: middle;'> Mark</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td style='text-align: center; vertical-align: middle;'> Diagram Use case</td>
-                  <td style='text-align: center; vertical-align: middle;'> 29.11.2021</td>
-                  <td style='text-align: center; vertical-align: middle;'> 8</td>
-              </tr>
+              <tbody id="MainPageTable">
           </tbody>
           </table>
             </div>
         </div>
     </div>
 </div>
+<script src="viewPass.js"></script>
+<script src="UserProfile.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

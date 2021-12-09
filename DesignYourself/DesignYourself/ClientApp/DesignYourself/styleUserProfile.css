@@ -90,3 +90,29 @@ small {
 .error small {
   visibility: visible;
 }
+
+.container1 {
+    flex-direction: row;
+    display:flex;
+    cursor: pointer;
+}
+
+.logrows{
+    flex-direction: row;
+    display:flex;
+    justify-content:center;
+    margin-bottom:10px;
+    padding-top:10px;
+    margin-left: 5px; 
+}
+
+.icon{
+   margin-left: 5px;
+   margin-top: 5px;
+}
+
+.row1 {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+}

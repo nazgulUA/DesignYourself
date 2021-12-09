@@ -1,0 +1,45 @@
+html, body {
+    height: 100vh;
+}
+
+#user-info-page {
+    width: 800px;
+    height: 100%;
+    margin: auto;
+}
+
+.roundrected {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #00000010;
+}
+
+#scroller {
+    height: 74%;
+}
+
+#info-holder {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    height: 24%;
+}
+
+.completed-item-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.spacer {
+    margin-right: 1%;
+}

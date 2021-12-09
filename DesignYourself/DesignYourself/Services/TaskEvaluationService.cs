@@ -90,16 +90,30 @@ namespace DesignYourself.Services
                         var tEntity = entities.Where(e => e.id == cell.target.id).FirstOrDefault();
                         var sSourceEntity = sentites.Where(e => e.name == sEntity.name).FirstOrDefault();
                         var sTargetEntity = sentites.Where(e => e.name == tEntity.name).FirstOrDefault();
-                        if (srelationship.Any(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)))
-                        {
-                            if(srelationship.Where(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)).FirstOrDefault().type != cell.type)
+                        if (cell.type != "uml.Association") {
+                            if ((srelationship.Any(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)))|| (srelationship.Any(sr => (sr.source.id == sTargetEntity.id) && (sr.target.id == sSourceEntity.id))))
+                            {
+                                if (srelationship.Where(sr => ((sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id))||((sr.source.id == sTargetEntity.id) && (sr.target.id == sSourceEntity.id))).FirstOrDefault().type != cell.type)
+                                {
+                                    return 0;
+                                }
+                            }
+                            else
                             {
                                 return 0;
                             }
-                        }
-                        else
-                        {
-                            return 0;
+                        } else {
+                            if (srelationship.Any(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)))
+                            {
+                                if (srelationship.Where(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)).FirstOrDefault().type != cell.type)
+                                {
+                                    return 0;
+                                }
+                            }
+                            else
+                            {
+                                return 0;
+                            }
                         }
                     }
                 }
@@ -118,13 +132,13 @@ namespace DesignYourself.Services
 
         public IEnumerable<TaskResultViewModel> GetTaskEvaluations(int UserId)
         {
-            var solvedTasks = dbContext.SolvedTasks.Include(st => st.Task).Where(st => st.UserId == UserId);
-            return mapper.Map<IEnumerable<SolvedTask>, IEnumerable<TaskResultViewModel>>(solvedTasks);
+            var solvedTasks = dbContext.SolvedTasks.Include(st => st.Task).Where(st => st.UserId == UserId).ToList();
+            return mapper.Map<IEnumerable<SolvedTask>, IEnumerable<TaskResultViewModel>>(solvedTasks).OrderBy(s=>s.SolvationDate).Reverse().ToList();
         }
         public IEnumerable<TaskResultViewModel> GetTaskEvaluations()
         {
             var solvedTasks = dbContext.SolvedTasks.Include(st => st.Task).ToList();
-            return mapper.Map<IEnumerable<SolvedTask>, IEnumerable<TaskResultViewModel>>(solvedTasks);
+            return mapper.Map<IEnumerable<SolvedTask>, IEnumerable<TaskResultViewModel>>(solvedTasks).OrderBy(s => s.SolvationDate).Reverse().ToList();
         }
         public bool IsTaskExist(int TaskId)
         {
