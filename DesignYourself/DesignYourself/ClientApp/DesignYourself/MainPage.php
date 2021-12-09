@@ -20,7 +20,8 @@
     <i class="fas fa-swatchbook"></i>
     <a href="MainPage.php">Tasks</a>
     <a id="ManagTask" href="ManagmentTasks.php">Managment Tasks</a>
-      </div>
+    <a href="AllUserStatics.php">Statistics of completed tasks</a>
+    </div>
     </h1>
     </div>
     <!-- Delete Modal -->

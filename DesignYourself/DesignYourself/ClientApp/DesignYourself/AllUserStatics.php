@@ -21,37 +21,18 @@
     <a href="MainPage.php">Tasks</a>
     <a id="ManagTask" href="ManagmentTasks.php">Managment Tasks</a>
     <a href="AllUserStatics.php">Statistics of completed tasks</a>
-    </div>
+      </div>
     </h1>
     </div>
-    <div class="container">
-  <div id="Row12" class="row2">
-    <button id="butAdd" type="button" class="btn btn-primary m-1 float-right">
-    </button>
-  </div>
-</div>
-  <!-- Delete Modal -->
-<div class="modal" id="deleteModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Delete task</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <!-- Modal body -->
-      <div class="modal-body">
-        <form id="loginData">
-            <div class="form-group">
-            <label for="Id">Are you sure you want to delete this task?</label>
-          </div>
-          <div class="form-group float-right">
-            <button type="submit" class="btn btn-danger" id="submitDelete">Confirm</button>
-            <button type="button" class="btn btn-outline-primary me-2" data-dismiss="modal">Close</button>
-          </div>  
-        </form>
-      </div>
+    <div class="mom">
+    <div class="child">
+        <button id="sortDay" class="childinner btn btn-primary">Sort by day</button>
     </div>
+    <div class="child">
+        <button id="sortMonth" class="childinner btn btn-primary">Sort by month</button>
+    </div>
+    <div class="child">
+        <button id="sortYear" class="childinner btn btn-primary">Sort by year</button>
     </div>
     </div>
     <div class="row">
@@ -59,8 +40,9 @@
               <thead>
                 <tr>
                   <th style='text-align: center; vertical-align: middle;'> Task of constructing UML-diagrams</th>
-                  <th>Update</th>
-                  <th>Delete</th>
+                  <th>User</th>
+                  <th>Date of execute</th>
+                  <th>Mark</th>
                 </tr>
               </thead>
               <tbody id="MainPageTable">
@@ -68,7 +50,7 @@
           </table>
     </div>
     <?php include 'footer.php'; ?>
-    <script src="ManagmentTasks.js"></script>
+<script src="AllUserStatics.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

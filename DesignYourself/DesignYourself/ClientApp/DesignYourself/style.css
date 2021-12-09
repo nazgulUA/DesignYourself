@@ -109,4 +109,19 @@ small {
   color: white;
 }
 
+.mom {
+    flex-direction: row;
+    display:flex;
+    justify-content:center;
+    margin-bottom: 1%;
+}
 
+.child {
+    display: table-cell;
+}
+
+.childinner {
+    margin-left: 25px;
+    /* Decorative .. */
+    min-height: 40px;
+}
