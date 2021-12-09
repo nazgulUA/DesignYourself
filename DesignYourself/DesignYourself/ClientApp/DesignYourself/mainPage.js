@@ -5,7 +5,6 @@ $(window).on('load', function () {
     console.log( window.localStorage.getItem('password'));
     var xmlhttp = new XMLHttpRequest();
     var url = "https://localhost:44326/api/Tasks/GetTaskList"
-
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var myArr = JSON.parse(this.responseText);
@@ -16,9 +15,10 @@ $(window).on('load', function () {
     xmlhttp.send();
 
     document.getElementById("ManagTask").style.display = "none";
-
+    document.getElementById("AllUserStatics").style.display = "none";
     if (window.localStorage.getItem('userTypeId') == 1) {
         document.getElementById("ManagTask").style.display = "block";
+        document.getElementById("AllUserStatics").style.display = "block";
     }
     
     function myFunction(arr) {
