@@ -163,3 +163,15 @@ D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\
 D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\TaskUpdatePage\build\package-visio\package.json
 D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\TaskUpdatePage\build\package\package.json
 D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\TaskUpdatePage\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskCreationPage\build\package-visio\package-lock.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskCreationPage\build\package-visio\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskCreationPage\build\package\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskCreationPage\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskSolvingPage\build\package-visio\package-lock.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskSolvingPage\build\package-visio\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskSolvingPage\build\package\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskSolvingPage\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskUpdatePage\build\package-visio\package-lock.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskUpdatePage\build\package-visio\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskUpdatePage\build\package\package.json
+D:\Architecture\DesignYourself\DesignYourself\DesignYourself\DesignYourself\bin\Debug\net5.0\ClientApp\DesignYourself\TaskUpdatePage\package.json

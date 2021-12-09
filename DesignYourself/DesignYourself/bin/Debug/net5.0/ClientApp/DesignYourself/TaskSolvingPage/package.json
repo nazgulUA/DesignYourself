@@ -1,0 +1,11 @@
+{
+  "name": "DesignYourself",
+  "version": "2.3.1",
+  "description": "design trainer program",
+  "main": "index.html",
+  "scripts": {},
+  "author": "client IO",
+  "license": "http://jointjs.com/license/rappid",
+  "private": true,
+  "devDependencies": {}
+}

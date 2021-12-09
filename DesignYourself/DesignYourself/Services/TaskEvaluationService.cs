@@ -91,24 +91,16 @@ namespace DesignYourself.Services
                         var sSourceEntity = sentites.Where(e => e.name == sEntity.name).FirstOrDefault();
                         var sTargetEntity = sentites.Where(e => e.name == tEntity.name).FirstOrDefault();
                         if (cell.type != "uml.Association") {
-                            if ((srelationship.Any(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)))|| (srelationship.Any(sr => (sr.source.id == sTargetEntity.id) && (sr.target.id == sSourceEntity.id))))
+                            if ((srelationship.Any(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)&&(sr.type==cell.type)))|| (srelationship.Any(sr => (sr.source.id == sTargetEntity.id) && (sr.target.id == sSourceEntity.id)&&(sr.type==cell.type))))
                             {
-                                if (srelationship.Where(sr => ((sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id))||((sr.source.id == sTargetEntity.id) && (sr.target.id == sSourceEntity.id))).FirstOrDefault().type != cell.type)
-                                {
-                                    return 0;
-                                }
                             }
                             else
                             {
                                 return 0;
                             }
                         } else {
-                            if (srelationship.Any(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)))
+                            if (srelationship.Any(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)&& (sr.type == cell.type)))
                             {
-                                if (srelationship.Where(sr => (sr.source.id == sSourceEntity.id) && (sr.target.id == sTargetEntity.id)).FirstOrDefault().type != cell.type)
-                                {
-                                    return 0;
-                                }
                             }
                             else
                             {
