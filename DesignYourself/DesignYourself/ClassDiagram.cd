@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="DesignYourself.Controllers.SolvedTasksController" Collapsed="true">
+    <Position X="20" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAiEAQAIBAAAAAAAAAAAAAAAAAAAgEAAAAAAAAA=</HashCode>
+      <FileName>Controllers\SolvedTasksController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Controllers.TasksController" Collapsed="true">
+    <Position X="21.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwABgAAAIBCAAAAAAAAAAABwAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\TasksController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Controllers.UsersController" Collapsed="true">
+    <Position X="20" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAACAAAAIDQAEAAAAAAAAAAAAAAAAEEAAAAAAAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.JsonModels.TaskStandartDataModelJSON" Collapsed="true">
+    <Position X="22.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\JsonModels\TaskStandartDataModelJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.JsonModels.Cell" Collapsed="true">
+    <Position X="20.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAIAAAAAAAAAAFEAAAAAAAQAAAAgA=</HashCode>
+      <FileName>Models\JsonModels\TaskStandartDataModelJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.JsonModels.Connection" Collapsed="true">
+    <Position X="22.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\JsonModels\TaskStandartDataModelJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.JsonModels.TaskTypeElementsJSON" Collapsed="true">
+    <Position X="26" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAAAAA=</HashCode>
+      <FileName>Models\JsonModels\TaskTypeElementsJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.DesignYourselfContext" Collapsed="true">
+    <Position X="24.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAQAQAAAAAAAAAAAAEQAACAAAAAAIAAAACAA=</HashCode>
+      <FileName>Models\DesignYourselfContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.SolvedTask" Collapsed="true">
+    <Position X="26" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAgAgAAEgAAAAAAECAAAAAAAA=</HashCode>
+      <FileName>Models\SolvedTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.Task" Collapsed="true">
+    <Position X="20.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAAAAAAgAAAAAAIAAAwAAQgAAAAAAAAQAAAACAA=</HashCode>
+      <FileName>Models\Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.TaskType" Collapsed="true">
+    <Position X="24.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAIQAAQAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\TaskType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.User" Collapsed="true">
+    <Position X="20.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACIAAAAAAAAAAAgAAQAACAACAAAIAAAAAAg=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Models.UserType" Collapsed="true">
+    <Position X="22.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAIgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Services.AuthenticationService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAICAAAAQAAAAIAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Services\AuthenticationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignYourself.Services.AuthenticationServiceSingleton" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAICAAAAQAAAAIAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Services\AuthenticationServiceSingleton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignYourself.Services.TaskEvaluationService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAIQAAAQAAEAAAAAAAAAAAIAAQAAA=</HashCode>
+      <FileName>Services\TaskEvaluationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignYourself.Services.TaskManagmentService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAEAAAAAIIAAAAAQAAAAAAAgEAAAAAAgAAAAEAAIA=</HashCode>
+      <FileName>Services\TaskManagmentService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignYourself.ViewModels.Mapper.MapperProfiler" Collapsed="true">
+    <Position X="22.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Mapper\MapperProfiler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.Mapper.RegisterMapperProfilesExtesion" Collapsed="true">
+    <Position X="24" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Mapper\RegisterMapperProfilesExtesion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.AuthViewModel" Collapsed="true">
+    <Position X="20.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\AuthViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.SignUpViewModel" Collapsed="true">
+    <Position X="25.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SignUpViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.TaskAvaluationResultViewModel" Collapsed="true">
+    <Position X="20.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAACQAAAAAAA=</HashCode>
+      <FileName>ViewModels\TaskAvaluationResultViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.TaskCreationViewModel" Collapsed="true">
+    <Position X="22.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAIAAAwAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ViewModels\TaskCreationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.TaskListViewModel" Collapsed="true">
+    <Position X="24" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\TaskListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.TaskResultViewModel" Collapsed="true">
+    <Position X="25.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAgAgAAEgAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ViewModels\TaskResultViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.TaskSolutionViewModel" Collapsed="true">
+    <Position X="20.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ViewModels\TaskSolutionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.TaskSolveViewModel" Collapsed="true">
+    <Position X="22.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAgAAAAAAIAAAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\TaskSolveViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.ViewModels.TaskUpdateViewModel" Collapsed="true">
+    <Position X="24" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAIAAAwAAAgAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ViewModels\TaskUpdateViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Program" Collapsed="true">
+    <Position X="25.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignYourself.Startup" Collapsed="true">
+    <Position X="15.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DesignYourself.Services.Abstract.IAuthenticationService" Collapsed="true">
+    <Position X="12.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAACAAAAAAAAAIAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Services\Abstract\IAuthenticationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DesignYourself.Services.Abstract.ITaskEvaluationService" Collapsed="true">
+    <Position X="14.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAQAAEAAAAAAAAAAAIAAQAAA=</HashCode>
+      <FileName>Services\Abstract\ITaskEvaluationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DesignYourself.Services.Abstract.ITaskManagmentService" Collapsed="true">
+    <Position X="12.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAEAAAAAIAAAAAAAAAAAAAAgEAAAAAAgAAAAEAAIA=</HashCode>
+      <FileName>Services\Abstract\ITaskManagmentService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
